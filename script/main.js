@@ -32,7 +32,7 @@ listBtn2.onclick = function(e) {
  listText.textContent = myItem + done;
 }
 listBtn3.onclick = function(e) {
-    edtPlc.appendChild('imput')    
+    //edtPlc.appendChild('imput')    
     var newCont = '.....';   
     listText.textContent = myItem.replace(myItem,newCont);
 }
