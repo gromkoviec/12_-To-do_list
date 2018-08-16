@@ -11,7 +11,11 @@ var listText = document.createElement('span');
 var listBtn = document.createElement('button');
 var listBtn2 = document.createElement('button');
 var listBtn3 = document.createElement('button'); 
-var edtPlc = document.createElement('imput');          
+var listBtn4 = document.createElement('button');
+var listBtn5 = document.createElement('button');          
+var imput2 = document.createElement ('imput'); 
+imput2.setAttribute('type', 'imput');
+//imput2.setAttribute('value', '');
           
 listItem.appendChild(listText);  // appendChild dodaje dotakowy węzeł do struktury na końcu 
 listText.textContent = myItem;
@@ -20,7 +24,8 @@ listBtn.textContent = 'Delete';
 listItem.appendChild(listBtn2);
 listBtn2.textContent = 'Done';
 listItem.appendChild(listBtn3);
-listBtn3.textContent = 'Edit';
+listBtn3.textContent = 'Edit';          
+       
 list.appendChild(listItem);
           
 listBtn.onclick = function(e) {
@@ -28,13 +33,44 @@ listBtn.onclick = function(e) {
 }
 listBtn2.onclick = function(e) {
   var done = ' Done ';
-  listItem.removeChild(listBtn2);  //var doneColor = done.fontcolor('green');    
- listText.textContent = myItem + done;
+  listItem.removeChild(listBtn2);
+   
+    //var doneColor = done.fontcolor('green');    
+  listText.textContent = myItem + done;
+  // myItem.style.background = 'green';
+   listItem.removeChild(listBtn4);
+   listItem.removeChild(listBtn5);
+   listItem.removeChild(listBtn3);
 }
-listBtn3.onclick = function(e) {
-   // edtPlc.appendChild('imput')    
-    var newCont = '.....';   
-    listText.textContent = myItem.replace(myItem,newCont);
+listBtn3.onclick = function() {   // EDIT
+
+  
+    listItem.appendChild(imput2);
+    
+    //listItem.replace(imput2, myItem);   
+    
+    listItem.removeChild(listBtn3);
+    listItem.appendChild(listBtn4);
+    listBtn4.textContent = 'Accept';    
+    listItem.appendChild(listBtn5);
+    listBtn5.textContent = 'Decline';   
+    
+    listBtn4.onclick = function() { //Accept
+        
+        //var newCnt = input.value;
+        //input.value = '';
+      
+        //newCnt= 'TEST'; // !!!!!!!!!!!Korekta      
+        
+        //listText.textContent = myItem.replace(listText,imput2); 
+    }
+    
+    listBtn5.onclick = function() {  // Decline
+        
+        listText.textContent = myItem;         
+    }
+ 
+   
 }
 input.focus(); // przekierowanie na okno dodawania zadań
 }
