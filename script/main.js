@@ -50,10 +50,11 @@ listBtn3.onclick = function() {   // EDIT
     listBtn.style.display = 'none';
     listBtn2.style.display = 'none';
     
-    var imput = document.querySelector('ul');
-    var imput = document.createElement ('imput'); 
-    imput.setAttribute('type', 'text');
-    listItem.appendChild(input);
+   
+    var imput2 = document.createElement ('imput'); 
+    imput2.setAttribute('type', 'text');
+    listItem.appendChild(input2);
+    //document.body.insertBefore(input2, listBtn4);
     
     
     listItem.removeChild(listBtn3);
