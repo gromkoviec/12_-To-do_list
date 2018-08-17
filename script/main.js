@@ -13,9 +13,7 @@ var listBtn2 = document.createElement('button');
 var listBtn3 = document.createElement('button'); 
 var listBtn4 = document.createElement('button');
 var listBtn5 = document.createElement('button');          
-var imput2 = document.createElement ('imput'); 
-imput2.setAttribute('type', 'imput');
-//imput2.setAttribute('value', '');
+
           
 listItem.appendChild(listText);  // appendChild dodaje dotakowy węzeł do struktury na końcu 
 listText.textContent = myItem;
@@ -38,16 +36,25 @@ listBtn2.onclick = function(e) {
     //var doneColor = done.fontcolor('green');    
   listText.textContent = myItem + done;
   // myItem.style.background = 'green';
-   listItem.removeChild(listBtn4);
-   listItem.removeChild(listBtn5);
+   //listItem.removeChild(listBtn4);
+   //listItem.removeChild(listBtn5);
    listItem.removeChild(listBtn3);
 }
 listBtn3.onclick = function() {   // EDIT
 
-  
-    listItem.appendChild(imput2);
+   
     
-    //listItem.replace(imput2, myItem);   
+    
+    var oldCnt = listText;
+    listText.style.display = 'none';
+    listBtn.style.display = 'none';
+    listBtn2.style.display = 'none';
+    
+    var imput = document.querySelector('ul');
+    var imput = document.createElement ('imput'); 
+    imput.setAttribute('type', 'text');
+    listItem.appendChild(input);
+    
     
     listItem.removeChild(listBtn3);
     listItem.appendChild(listBtn4);
@@ -62,7 +69,7 @@ listBtn3.onclick = function() {   // EDIT
       
         //newCnt= 'TEST'; // !!!!!!!!!!!Korekta      
         
-        //listText.textContent = myItem.replace(listText,imput2); 
+        //listText.textContent; //myItem.replace(newCnt,imput2); 
     }
     
     listBtn5.onclick = function() {  // Decline
