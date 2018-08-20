@@ -26,10 +26,10 @@ listBtn3.textContent = 'Edit';
        
 list.appendChild(listItem);
           
-listBtn.onclick = function(e) {
+listBtn.onclick = function() {
   list.removeChild(listItem);
 }
-listBtn2.onclick = function(e) {
+listBtn2.onclick = function() {
   var done = ' Done ';
   listItem.removeChild(listBtn2);
    
@@ -46,15 +46,16 @@ listBtn3.onclick = function() {   // EDIT
     
     
     var oldCnt = listText;
-    listText.style.display = 'none';
-    listBtn.style.display = 'none';
-    listBtn2.style.display = 'none';
-    
+    //listText.style.display = 'none';
+    listItem.removeChild(listText);
+    //listBtn.style.display = 'none';
+    listItem.removeChild(listBtn);
+    //listBtn2.style.display = 'none';
+    listItem.removeChild(listBtn2);
    
-    var imput2 = document.createElement ('imput'); 
-    imput2.setAttribute('type', 'text');
+    var input2 = document.createElement ('input'); 
+    input2.setAttribute('type', 'text');
     listItem.appendChild(input2);
-    //document.body.insertBefore(input2, listBtn4);
     
     
     listItem.removeChild(listBtn3);
@@ -64,6 +65,19 @@ listBtn3.onclick = function() {   // EDIT
     listBtn5.textContent = 'Decline';   
     
     listBtn4.onclick = function() { //Accept
+        
+        
+        
+        
+        listItem.appendChild(listBtn);
+        listBtn.textContent = 'Delete';
+        listItem.appendChild(listBtn2);
+        listBtn2.textContent = 'Done';
+        listItem.appendChild(listBtn3);
+        listBtn3.textContent = 'Edit'; 
+        listItem.removeChild(listBtn4);
+        listItem.removeChild(listBtn5);
+        listItem.removeChild(input2);
         
         //var newCnt = input.value;
         //input.value = '';
@@ -75,7 +89,22 @@ listBtn3.onclick = function() {   // EDIT
     
     listBtn5.onclick = function() {  // Decline
         
-        listText.textContent = myItem;         
+        listItem.appendChild(oldCnt);        
+        listText.textContent = oldCnt;
+        
+        listItem.appendChild(listBtn);
+        listBtn.textContent = 'Delete';
+        listItem.appendChild(listBtn2);
+        listBtn2.textContent = 'Done';
+        listItem.appendChild(listBtn3);
+        listBtn3.textContent = 'Edit'; 
+        listItem.removeChild(listBtn4);
+        listItem.removeChild(listBtn5);
+        listItem.removeChild(input2);
+           
+        
+        
+        
     }
  
    
