@@ -2,10 +2,16 @@ var list = document.querySelector('ul'); // odnosi sie do sekcji <ul>
 var input = document.querySelector('input'); // odnosi sie do sekcji <input type="text" name="item" id="item">
 var button = document.querySelector('button'); // <button>
 
+var empty = 'List is empty';
+var empText = document.createElement('span');
+empText.textContent= empty;
+document.body.appendChild(empText); 
+
+
       button.onclick = function() {
 var myItem = input.value;
         input.value = '';
-          
+document.body.removeChild(empText);         
 var listItem = document.createElement('li');
 var listText = document.createElement('span');
 var listBtn = document.createElement('button'); //DELETE
@@ -41,17 +47,8 @@ listBtn2.onclick = function() {
    
 } //DONE
 listBtn3.onclick = function() {   
-       
-    /*listItem.removeChild(listText);
-    listItem.removeChild(listBtn);
-    listItem.removeChild(listBtn2);
-    listItem.removeChild(listBtn3);*/
-    listText.style.display = 'none';
-    listBtn.style.display = 'none';
-    listBtn2.style.display = 'none';  
-    listBtn3.style.display = 'none';  
-    
-    var oldCnt = myItem;
+
+    //var oldCnt = myItem;
     
     var input2 = document.createElement ('input'); 
     input2.setAttribute('type', 'text');
@@ -63,29 +60,42 @@ listBtn3.onclick = function() {
     listBtn4.textContent = 'Accept';    
     listItem.appendChild(listBtn5);
     listBtn5.textContent = 'Decline';   
+    
+    /*listItem.removeChild(listText);
+    listItem.removeChild(listBtn);
+    listItem.removeChild(listBtn2);
+    listItem.removeChild(listBtn3);*/
+    listText.style.display = 'none';
+    listBtn.style.display = 'none';
+    listBtn2.style.display = 'none';  
+    listBtn3.style.display = 'none';  
         
 listBtn4.onclick = function() { //ACCEPT
-    var myItem2 = document.querySelector('input');
     
-    var myItem2 = input2.value;
+    var myItem = document.querySelector('input');
+    
+    var myItem = input2.value;
     input2.value = '';
-        
-    var listText2 = document.createElement('span');
+    listText.textContent = myItem;       
+    //var listText2 = document.createElement('span');
     //listItem.appendChild(listText2);     
-    listItem.insertBefore(listText2,listBtn); // wstawianie el. przed var wstawionyElement =elementRodzic.insertBefore(nowyElement,danyElement)
-    listText2.textContent = myItem2;
-        
+    //listItem.insertBefore(listText2,listBtn); // wstawianie el. przed var wstawionyElement =elementRodzic.insertBefore(nowyElement,danyElement)
+    //listText2.textContent = myItem;
+    
+    
+    
+    
+    
     listItem.removeChild(listBtn4);
     listItem.removeChild(listBtn5);
-    listItem.removeChild(input2);
-                
+    listItem.removeChild(input2);                
     /*listItem.appendChild(listBtn);
     listBtn.textContent = 'Delete';
     listItem.appendChild(listBtn2);
     listBtn2.textContent = 'Done';
     listItem.appendChild(listBtn3);
-    listBtn3.textContent = 'Edit'; 
-    listText.style.display = 'inline-block';*/
+    listBtn3.textContent = 'Edit'; */
+    listText.style.display = 'inline-block';
     listBtn.style.display = 'inline-block';
     listBtn2.style.display = 'inline-block'; 
     listBtn3.style.display = 'inline-block'; 
