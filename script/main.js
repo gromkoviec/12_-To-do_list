@@ -2,16 +2,10 @@ var list = document.querySelector('ul'); // odnosi sie do sekcji <ul>
 var input = document.querySelector('input'); // odnosi sie do sekcji <input type="text" name="item" id="item">
 var button = document.querySelector('button'); // <button>
 
-var empty = 'List is empty';
-var empText = document.createElement('span');
-empText.textContent= empty;
-document.body.appendChild(empText); 
-
-
       button.onclick = function() {
 var myItem = input.value;
         input.value = '';
-document.body.removeChild(empText);         
+       
 var listItem = document.createElement('li');
 var listText = document.createElement('span');
 var listBtn = document.createElement('button'); //DELETE
