@@ -43,11 +43,10 @@ listBtn2.onclick = function() {
 listBtn3.onclick = function() {   // EDIT
 
    
-    
-    
-    var oldCnt = listText;
+    listItem.removeChild(listText);    
+    var oldCnt = myItem;
     //listText.style.display = 'none';
-    listItem.removeChild(listText);
+ 
     //listBtn.style.display = 'none';
     listItem.removeChild(listBtn);
     //listBtn2.style.display = 'none';
@@ -56,7 +55,7 @@ listBtn3.onclick = function() {   // EDIT
     var input2 = document.createElement ('input'); 
     input2.setAttribute('type', 'text');
     listItem.appendChild(input2);
-    
+    input2.focus();
     
     listItem.removeChild(listBtn3);
     listItem.appendChild(listBtn4);
@@ -64,9 +63,15 @@ listBtn3.onclick = function() {   // EDIT
     listItem.appendChild(listBtn5);
     listBtn5.textContent = 'Decline';   
     
+    
     listBtn4.onclick = function() { //Accept
+      //  var myItem2 = document.querySelector('input');
+        var myItem2 = input2.value;
+        input2.value = '';
         
-        
+        var listText2 = document.createElement('span');
+        listItem.appendChild(listText2);        
+        listText2.textContent = myItem2;
         
         
         listItem.appendChild(listBtn);
@@ -89,8 +94,9 @@ listBtn3.onclick = function() {   // EDIT
     
     listBtn5.onclick = function() {  // Decline
         
-        listItem.appendChild(oldCnt);        
-        listText.textContent = oldCnt;
+        var listText3 = document.createElement('span');
+        listItem.appendChild(listText3);        
+        listText3.textContent = oldCnt;
         
         listItem.appendChild(listBtn);
         listBtn.textContent = 'Delete';
